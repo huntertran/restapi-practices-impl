@@ -27,10 +27,11 @@
             }
         },
         {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
+            "type": "java",
+            "name": "Java Spring Launch",
+            "request": "launch",
+            "mainClass": "SampleApplication.App",
+            "projectName": "SampleApplication"
         }
     ]
 }
