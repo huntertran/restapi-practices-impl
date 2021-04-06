@@ -4,9 +4,10 @@ using System.Threading.Tasks;
 
 namespace sampleApi.Utils
 {
-    public static class TimeOut
+    internal struct VoidTypeStruct { }
+
+    static class TimeOut
     {
-        internal struct VoidTypeStruct { }
         internal static void MarshalTaskResults<TResult>(Task source, TaskCompletionSource<TResult> proxy)
         {
             switch (source.Status)

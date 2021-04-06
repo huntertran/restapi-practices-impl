@@ -14,7 +14,15 @@ namespace sampleApi.Controllers
             int actualRunTime = 5000;
             int timeout = 2000;
 
-            await TimeOut.TimeOutAfter(Task.Delay(actualRunTime), timeout);
+            try
+            {
+                await TimeOut.TimeOutAfter(Task.Delay(actualRunTime), timeout);
+            }
+            catch
+            {
+                Response.Headers.Add("Connection", "close");
+                return StatusCode(408, "Process Timeout");
+            }
 
             return Ok("ok");
         }
