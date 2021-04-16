@@ -13,17 +13,17 @@ namespace sampleApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            int actualRunTime = 20000;
+            int actualRunTime = 10000;
 
             try
             {
                 await Task.Delay(actualRunTime, cancellationTokenSource.Token);
             }
-            catch(TaskCanceledException e)
+            catch (TaskCanceledException exception)
             {
                 // 499 Client Closed Request
                 // Used when the client has closed the request before the server could send a response.
-                return new StatusCodeResult(499);
+                return StatusCode(499, "Client Closed Request before the server could send a response. Task cancelled with exception " + exception.Message);
             }
 
             return Ok("ok");
