@@ -44,7 +44,7 @@
         "testScript": "// pw.expect('variable').toBe('value');",
         "name": "POST ForceAbort",
         "collection": 1
-      },
+      }
     ],
     "flag": "rest"
   }
