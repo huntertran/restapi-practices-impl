@@ -2,4 +2,7 @@
     "java.format.settings.url": "https://gist.githubusercontent.com/huntertran/7ebbeb855aa7e234ec26922667a07cfe/raw/fee78be03e4fa2aefcd0e7d325700b05631fe207/java-convention.xml",
     "java.configuration.updateBuildConfiguration": "interactive",
     "java.checkstyle.configuration": "${workspaceFolder}\\checkstyle.xml",
+    "cSpell.words": [
+        "Gson"
+    ],
 }
