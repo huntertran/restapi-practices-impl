@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import patterns.sample.controllers.SampleRelatedResourceController;
 
+// put these logics in abstract class for reuse
+// template method
 public class ResourceVisitorImplementation implements ResourceVisitor {
 
     @Override

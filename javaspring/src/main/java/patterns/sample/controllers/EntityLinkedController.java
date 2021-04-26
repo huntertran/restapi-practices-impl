@@ -8,6 +8,7 @@ import patterns.sample.utils.EntityLinking.ResourceVisitor;
 import patterns.sample.utils.EntityLinking.ResourceVisitorImplementation;
 
 @RestController
+// double dispatch
 public class EntityLinkedController {
     @GetMapping("/entitylinked")
     public String get() {
