@@ -6,14 +6,16 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import patterns.sample.services.TimeOutTask;
 
 @RestController
+@RequestMapping("/timeout")
 public class TimeOutController {
 
-    @GetMapping("/timeout")
+    @GetMapping("/")
     public String get() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<String> future = executor.submit(new TimeOutTask());

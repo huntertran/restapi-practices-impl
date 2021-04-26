@@ -6,16 +6,18 @@ import java.util.concurrent.Future;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import patterns.sample.services.TimeOutTask;
 
 @RestController
+@RequestMapping("/forceabort")
 public class ForceAbortController {
 
     Future<String> future;
 
-    @GetMapping("/forceabort")
+    @GetMapping("/")
     public String get() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         future = executor.submit(new TimeOutTask(10000));
@@ -29,7 +31,7 @@ public class ForceAbortController {
         return new String("ok");
     }
 
-    @PostMapping("/forceabort")
+    @PostMapping("/")
     public String post() {
 
         if (future != null) {
