@@ -7,13 +7,13 @@ import patterns.sample.controllers.SampleRelatedResourceController;
 
 // put these logics in abstract class for reuse
 // template method
-public class LogicABResourceVisitorImplementation extends CommonResourceVisitor
-                                                  implements ResourceVisitor {
+public class LogicCDResourceVisitor extends CommonResourceVisitor
+                                    implements ResourceVisitor {
 
     @Override
     public String visit(SampleRelatedResourceController sampleRelatedResourceController) {
 
-        Predicate<String> predicate = Pattern.compile("(?:\\/resource_a)|(?:\\/resource_b)").asMatchPredicate();
+        Predicate<String> predicate = Pattern.compile("(?:\\/resource_c)|(?:\\/resource_d)").asMatchPredicate();
 
         return filterResourcesWithRegexPredicate(predicate);
     }

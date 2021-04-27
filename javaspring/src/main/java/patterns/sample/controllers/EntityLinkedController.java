@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import patterns.sample.utils.EntityLinking.LinkedResource;
 import patterns.sample.utils.EntityLinking.ResourceVisitor;
-import patterns.sample.utils.EntityLinking.LogicABResourceVisitorImplementation;
-import patterns.sample.utils.EntityLinking.LogicCDResourceVisitorImplementation;
+import patterns.sample.utils.EntityLinking.LogicABResourceVisitor;
+import patterns.sample.utils.EntityLinking.LogicCDResourceVisitor;
 
 
 // double dispatch
@@ -19,7 +19,7 @@ public class EntityLinkedController {
     public String getWithLogicAB() {
         LinkedResource[] resources = new LinkedResource[] { new SampleRelatedResourceController() };
 
-        ResourceVisitor visitor = new LogicABResourceVisitorImplementation();
+        ResourceVisitor visitor = new LogicABResourceVisitor();
 
         String result = "";
 
@@ -34,7 +34,7 @@ public class EntityLinkedController {
     public String getWithLogicCD() {
         LinkedResource[] resources = new LinkedResource[] { new SampleRelatedResourceController() };
 
-        ResourceVisitor visitor = new LogicCDResourceVisitorImplementation();
+        ResourceVisitor visitor = new LogicCDResourceVisitor();
 
         String result = "";
 
