@@ -20,14 +20,20 @@ namespace sampleApi.Controllers
             return Ok("ok");
         }
 
-        [HttpGet]
-        public IActionResult GetB()
+        [HttpPost]
+        public IActionResult PostB()
         {
             return Ok("ok");
         }
 
         [HttpGet]
         public IActionResult GetC()
+        {
+            return Ok("ok");
+        }
+
+        [HttpPost]
+        public IActionResult PostD()
         {
             return Ok("ok");
         }

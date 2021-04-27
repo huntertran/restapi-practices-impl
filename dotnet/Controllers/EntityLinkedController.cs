@@ -9,13 +9,30 @@ namespace sampleApi.Controllers
     public class EntityLinkedController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetWithABResource()
         {
             List<Entity> entities = new List<Entity>();
             List<ILinkedResource> resources = new List<ILinkedResource>();
             resources.Add(new SampleRelatedResourceController());
 
-            IResourceVisitor visitor = new ResourceVisitor();
+            IResourceVisitor visitor = new LogicABResourceVisitor();
+
+            foreach (ILinkedResource resource in resources)
+            {
+                entities.AddRange(resource.Accept(visitor));
+            }
+
+            return Ok(entities);
+        }
+
+        [HttpGet]
+        public IActionResult GetWithCDResource()
+        {
+            List<Entity> entities = new List<Entity>();
+            List<ILinkedResource> resources = new List<ILinkedResource>();
+            resources.Add(new SampleRelatedResourceController());
+
+            IResourceVisitor visitor = new LogicCDResourceVisitor();
 
             foreach (ILinkedResource resource in resources)
             {

@@ -12,8 +12,6 @@ import com.google.gson.Gson;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import patterns.sample.controllers.SampleRelatedResourceController;
-
 public abstract class CommonResourceVisitor {
 
     protected Entity getEntityFromAnnotation(Annotation annotation) {
@@ -33,9 +31,8 @@ public abstract class CommonResourceVisitor {
         return entity;
     }
 
-    protected String filterResourcesWithRegexPredicate(Predicate<String> predicate) {
+    protected String filterResourcesWithRegexPredicate(Predicate<String> predicate, Method[] methods) {
         List<Entity> entities = new ArrayList<>();
-        Method[] methods = SampleRelatedResourceController.class.getMethods();
 
         for (Method method : methods) {
             Annotation[] annotations = method.getAnnotations();

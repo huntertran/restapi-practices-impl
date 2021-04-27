@@ -19,5 +19,10 @@ namespace sampleApi.Utils.EntityLinking
             this.Uri = uri;
             this.Method = method;
         }
+
+        public Entity(string uri)
+        {
+            this.Uri = uri;
+        }
     }
 }

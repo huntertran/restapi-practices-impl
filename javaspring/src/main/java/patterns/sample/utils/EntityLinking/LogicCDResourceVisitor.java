@@ -1,5 +1,6 @@
 package patterns.sample.utils.EntityLinking;
 
+import java.lang.reflect.Method;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
@@ -14,7 +15,8 @@ public class LogicCDResourceVisitor extends CommonResourceVisitor
     public String visit(SampleRelatedResourceController sampleRelatedResourceController) {
 
         Predicate<String> predicate = Pattern.compile("(?:\\/resource_c)|(?:\\/resource_d)").asMatchPredicate();
+        Method[] methods = SampleRelatedResourceController.class.getMethods();
 
-        return filterResourcesWithRegexPredicate(predicate);
+        return filterResourcesWithRegexPredicate(predicate, methods);
     }
 }
