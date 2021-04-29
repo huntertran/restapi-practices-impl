@@ -11,6 +11,6 @@ namespace sampleApi.Utils.PostPutPatchReturn
         void InsertStudent(Student student);
         void DeleteStudent(int studentID);
         void UpdateStudent(Student student);
-        Task Save();
+        Task<bool> SaveAsync();
     }
 }

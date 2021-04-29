@@ -41,9 +41,16 @@ namespace sampleApi.Utils.PostPutPatchReturn
             _context.Entry(student).State = EntityState.Modified;
         }
 
-        public async Task Save()
+        public async Task<bool> SaveAsync()
         {
-            await _context.SaveChangesAsync();
+            var changedRecordNum = await _context.SaveChangesAsync();
+
+            if (changedRecordNum > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private bool disposed = false;

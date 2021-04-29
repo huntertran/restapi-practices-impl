@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using sampleApi.Utils;
 using sampleApi.Utils.PostPutPatchReturn;
 
 namespace sampleApi.Controllers
@@ -16,21 +16,31 @@ namespace sampleApi.Controllers
             this._studentRepository = studentRepository;
         }
 
+        [HttpGet]
+        public IEnumerable<Student> GetAll()
+        {
+            return _studentRepository.GetStudents();
+        }
+
         [HttpPost]
-        public async Task<IActionResult> Create(Student student, bool isReturnObject)
+        public async Task<IActionResult> Create([FromBody] Student student, bool isReturnObject)
         {
             _studentRepository.InsertStudent(student);
-            await _studentRepository.Save();
+            var isSuccess = await _studentRepository.SaveAsync();
 
-            if (isReturnObject)
+            if (isSuccess)
             {
-                var newStudent = await _studentRepository.GetStudentByID(1);
-                return Ok(newStudent);
+                if (isReturnObject)
+                {
+                    return Ok(student);
+                }
+                else
+                {
+                    return Ok();
+                }
             }
-            else
-            {
-                return Ok();
-            }
+
+            return StatusCode(500, "Cannot insert new student");
         }
     }
 }
