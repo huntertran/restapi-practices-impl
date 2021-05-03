@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using sampleApi.Utils.PostPutPatchReturn.Models;
 
-namespace sampleApi.Utils.PostPutPatchReturn
+namespace sampleApi.Utils.PostPutPatchReturn.Repositories
 {
     public class StudentRepository : IStudentRepository, IDisposable
     {
@@ -12,7 +13,7 @@ namespace sampleApi.Utils.PostPutPatchReturn
 
         public StudentRepository(MyDbContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         public IEnumerable<Student> GetStudents()
@@ -57,14 +58,14 @@ namespace sampleApi.Utils.PostPutPatchReturn
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!disposed)
             {
                 if (disposing)
                 {
                     _context.Dispose();
                 }
             }
-            this.disposed = true;
+            disposed = true;
         }
 
         public void Dispose()

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace sampleApi.Utils.PostPutPatchReturn
+namespace sampleApi.Utils.PostPutPatchReturn.Core
 {
     public abstract class CommonControllerLogics : ControllerBase
     {

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using sampleApi.Utils.PostPutPatchReturn;
+using sampleApi.Utils.PostPutPatchReturn.Models;
 
 namespace sampleApi.Utils
 {

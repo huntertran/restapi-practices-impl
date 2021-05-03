@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using sampleApi.Utils;
-using sampleApi.Utils.PostPutPatchReturn;
+using sampleApi.Utils.PostPutPatchReturn.Repositories;
 
 namespace sampleApi
 {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace sampleApi.Utils.PostPutPatchReturn
+namespace sampleApi.Utils.PostPutPatchReturn.Models
 {
     public class Student
     {

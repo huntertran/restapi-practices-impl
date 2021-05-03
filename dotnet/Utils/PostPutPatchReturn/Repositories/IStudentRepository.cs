@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using sampleApi.Utils.PostPutPatchReturn.Models;
 
-namespace sampleApi.Utils.PostPutPatchReturn
+namespace sampleApi.Utils.PostPutPatchReturn.Repositories
 {
     public interface IStudentRepository : IDisposable
     {

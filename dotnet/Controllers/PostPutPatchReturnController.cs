@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using sampleApi.Utils.PostPutPatchReturn;
+using sampleApi.Utils.PostPutPatchReturn.Core;
+using sampleApi.Utils.PostPutPatchReturn.Models;
+using sampleApi.Utils.PostPutPatchReturn.Repositories;
 
 namespace sampleApi.Controllers
 {
