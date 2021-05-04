@@ -2,8 +2,6 @@ package patterns.sample.utils.contentnegotiation.models;
 
 import java.time.LocalDate;
 
-// import javax.xml.bind.annotation.XmlRootElement;
-
 public class Weather {
     private LocalDate dateTime;
     private double temperature;

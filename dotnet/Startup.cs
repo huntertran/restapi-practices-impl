@@ -24,7 +24,11 @@ namespace sampleApi
             services.AddCors();
             services.AddDbContext<MyDbContext>();
 
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.RespectBrowserAcceptHeader = true;
+            }).AddXmlDataContractSerializerFormatters();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "sampleApi", Version = "v1" });
