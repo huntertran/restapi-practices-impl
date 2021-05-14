@@ -33,5 +33,18 @@ namespace sampleApi.Controllers
 
             return Ok(weathers);
         }
+
+        [HttpGet]
+        public string ResourceTest()
+        {
+            Weather[] weathers = new Weather[2];
+
+            DateTime today = DateTime.Now;
+
+            weathers[0] = new Weather(today, 15.6);
+            weathers[1] = new Weather(today.AddDays(1), 17);
+
+            return "test";
+        }
     }
 }

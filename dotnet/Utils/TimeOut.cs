@@ -1,3 +1,5 @@
+// originated from https://devblogs.microsoft.com/pfxteam/crafting-a-task-timeoutafter-method/ by 
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
