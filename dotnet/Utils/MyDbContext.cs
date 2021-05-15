@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using sampleApi.Utils.PaginationForList;
 using sampleApi.Utils.PostPutPatchReturn.Models;
 
 namespace sampleApi.Utils
@@ -19,5 +20,6 @@ namespace sampleApi.Utils
         }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<Transaction> transaction { get; set; }
     }
 }
