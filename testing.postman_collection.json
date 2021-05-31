@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "c305be95-e291-4091-98ee-82b1957b2738",
+		"name": "API Patterns",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ServerTimeout - Force abort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/forceabort",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"forceabort"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ServerTimeout - Post force abort",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/forceabort",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"forceabort"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Linked Entities with logic AB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/entitylinked/logicABResources",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"entitylinked",
+						"logicABResources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-PUT-PATCH return",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/postputpatchreturn/add?name=Van Tuan Tran&email=hunter.tran.92@outlook.com&isReturnObject=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postputpatchreturn",
+						"add"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Van Tuan Tran"
+						},
+						{
+							"key": "email",
+							"value": "hunter.tran.92@outlook.com"
+						},
+						{
+							"key": "isReturnObject",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-PUT-PATCH return",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/postputpatchreturn/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postputpatchreturn",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Content Negotiation",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/contentnegotiation/resource",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contentnegotiation",
+						"resource"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagination - get transactions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pagination/addsampledata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagination",
+						"addsampledata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagination - get transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pagination/transaction?pageNumber=1&itemPerPage=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagination",
+						"transaction"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "1"
+						},
+						{
+							"key": "itemPerPage",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
