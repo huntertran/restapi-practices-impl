@@ -13,7 +13,7 @@
 	<name>sample</name>
 	<description>A proof of concept to prove the API design best practices</description>
 	<properties>
-		<java.version>14</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
-			<version>1.4.17</version>
+			<version>1.4.18</version>
 		  </dependency>
 
 	</dependencies>
